@@ -257,7 +257,6 @@ export type Database = {
       }
       profiles: {
         Row: {
-          backup_codes: Json | null
           badges: string[] | null
           created_at: string | null
           farm_location: Json | null
@@ -270,9 +269,6 @@ export type Database = {
           phone_verified: boolean | null
           role: string | null
           ts_balance: number | null
-          two_factor_enabled: boolean | null
-          two_factor_method: string | null
-          two_factor_setup_at: string | null
           updated_at: string | null
           username: string | null
           verification_notes: string | null
@@ -282,7 +278,6 @@ export type Database = {
           xp: number | null
         }
         Insert: {
-          backup_codes?: Json | null
           badges?: string[] | null
           created_at?: string | null
           farm_location?: Json | null
@@ -295,9 +290,6 @@ export type Database = {
           phone_verified?: boolean | null
           role?: string | null
           ts_balance?: number | null
-          two_factor_enabled?: boolean | null
-          two_factor_method?: string | null
-          two_factor_setup_at?: string | null
           updated_at?: string | null
           username?: string | null
           verification_notes?: string | null
@@ -307,7 +299,6 @@ export type Database = {
           xp?: number | null
         }
         Update: {
-          backup_codes?: Json | null
           badges?: string[] | null
           created_at?: string | null
           farm_location?: Json | null
@@ -320,9 +311,6 @@ export type Database = {
           phone_verified?: boolean | null
           role?: string | null
           ts_balance?: number | null
-          two_factor_enabled?: boolean | null
-          two_factor_method?: string | null
-          two_factor_setup_at?: string | null
           updated_at?: string | null
           username?: string | null
           verification_notes?: string | null
@@ -711,10 +699,6 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: string
       }
-      get_latest_otp_for_testing: {
-        Args: { p_user_id: string }
-        Returns: string
-      }
       get_platform_setting: {
         Args: { setting_key: string }
         Returns: Json
@@ -729,10 +713,6 @@ export type Database = {
         }
         Returns: string
       }
-      send_two_factor_code: {
-        Args: { p_method?: string; p_user_id: string }
-        Returns: string
-      }
       update_platform_setting: {
         Args: { admin_id: string; setting_key: string; setting_value: Json }
         Returns: boolean
@@ -742,14 +722,6 @@ export type Database = {
           p_balance_change: number
           p_total_earned_change?: number
           p_transaction_id?: string
-          p_user_id: string
-        }
-        Returns: boolean
-      }
-      verify_two_factor_code: {
-        Args: {
-          p_code: string
-          p_device_fingerprint?: string
           p_user_id: string
         }
         Returns: boolean
