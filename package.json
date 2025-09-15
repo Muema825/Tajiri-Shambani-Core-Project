@@ -9,5 +9,7 @@
     "react-dom": "^19.1.1",
     "typescript": "^5.9.2",
     "vite": "^7.1.5"
+    "build:dev": "vite build --mode development"
+
   }
 }
