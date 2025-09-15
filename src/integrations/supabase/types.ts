@@ -268,13 +268,11 @@ export type Database = {
           phone: string | null
           phone_verified: boolean | null
           role: string | null
-          ts_balance: number | null
           updated_at: string | null
           username: string | null
           verification_notes: string | null
           verification_status: string | null
           verified_at: string | null
-          wallet_balance: number | null
           xp: number | null
         }
         Insert: {
@@ -289,13 +287,11 @@ export type Database = {
           phone?: string | null
           phone_verified?: boolean | null
           role?: string | null
-          ts_balance?: number | null
           updated_at?: string | null
           username?: string | null
           verification_notes?: string | null
           verification_status?: string | null
           verified_at?: string | null
-          wallet_balance?: number | null
           xp?: number | null
         }
         Update: {
@@ -310,13 +306,11 @@ export type Database = {
           phone?: string | null
           phone_verified?: boolean | null
           role?: string | null
-          ts_balance?: number | null
           updated_at?: string | null
           username?: string | null
           verification_notes?: string | null
           verification_status?: string | null
           verified_at?: string | null
-          wallet_balance?: number | null
           xp?: number | null
         }
         Relationships: []
