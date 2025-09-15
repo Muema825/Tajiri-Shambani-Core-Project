@@ -180,44 +180,6 @@ export type Database = {
         }
         Relationships: []
       }
-      phone_verification_otps: {
-        Row: {
-          created_at: string | null
-          expires_at: string
-          id: string
-          otp_code: string
-          phone_number: string
-          user_id: string
-          verified: boolean | null
-        }
-        Insert: {
-          created_at?: string | null
-          expires_at: string
-          id?: string
-          otp_code: string
-          phone_number: string
-          user_id: string
-          verified?: boolean | null
-        }
-        Update: {
-          created_at?: string | null
-          expires_at?: string
-          id?: string
-          otp_code?: string
-          phone_number?: string
-          user_id?: string
-          verified?: boolean | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "phone_verification_otps_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       platform_settings: {
         Row: {
           created_at: string
@@ -620,42 +582,6 @@ export type Database = {
         }
         Relationships: []
       }
-      two_factor_codes: {
-        Row: {
-          code: string
-          code_type: string
-          created_at: string
-          expires_at: string
-          id: string
-          ip_address: unknown | null
-          used_at: string | null
-          user_agent: string | null
-          user_id: string
-        }
-        Insert: {
-          code: string
-          code_type?: string
-          created_at?: string
-          expires_at: string
-          id?: string
-          ip_address?: unknown | null
-          used_at?: string | null
-          user_agent?: string | null
-          user_id: string
-        }
-        Update: {
-          code?: string
-          code_type?: string
-          created_at?: string
-          expires_at?: string
-          id?: string
-          ip_address?: unknown | null
-          used_at?: string | null
-          user_agent?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
       user_achievements: {
         Row: {
           achievement_name: string
@@ -774,60 +700,7 @@ export type Database = {
       }
     }
     Views: {
-      secure_transaction_summaries: {
-        Row: {
-          amount: number | null
-          created_at: string | null
-          id: string | null
-          status: string | null
-          type: string | null
-        }
-        Insert: {
-          amount?: number | null
-          created_at?: string | null
-          id?: string | null
-          status?: string | null
-          type?: string | null
-        }
-        Update: {
-          amount?: number | null
-          created_at?: string | null
-          id?: string | null
-          status?: string | null
-          type?: string | null
-        }
-        Relationships: []
-      }
-      transaction_summaries: {
-        Row: {
-          amount: number | null
-          category: string | null
-          created_at: string | null
-          id: string | null
-          status: string | null
-          type: string | null
-          user_id: string | null
-        }
-        Insert: {
-          amount?: never
-          category?: never
-          created_at?: string | null
-          id?: string | null
-          status?: string | null
-          type?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          amount?: never
-          category?: never
-          created_at?: string | null
-          id?: string | null
-          status?: string | null
-          type?: string | null
-          user_id?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       generate_backup_codes: {
